@@ -1,6 +1,5 @@
 var usermodel = require('../model/registrationmodel');
 var nodemailer = require('nodemailer');
-const storage = require('node-persist');
 
 exports.register = async (req,res) => {
 
@@ -11,9 +10,6 @@ exports.register = async (req,res) => {
         var send_email = data.email;
 
         var OTP = (Math.floor(100000 + Math.random() * 900000));
-
-        await storage.init( /* options ... */ );
-        await storage.setItem('OTP',OTP)
 
         var transporter = nodemailer.createTransport({
             service: 'gmail',
@@ -76,22 +72,4 @@ exports.update_data = async (req,res)=>{
     res.status(200).json({
         status: 'Data update'
     });
-}
-
-exports.check_OTP = async (req,res)=>{
-
-    await storage.init( /* options ... */ );
-    var old_otp =  await storage.getItem('OTP');
-    var new_otp = req.body.otp;
-
-    if(old_otp==new_otp){
-        res.status(200).json({
-            status:"Account Verfiy"
-        })
-    }else{
-        res.status(200).json({
-            status:"Check Your OTP"
-        })
-    }
-
 }

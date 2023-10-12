@@ -13,7 +13,6 @@ router.get('/',user.select);
 router.get('/:id',user.delete_data);
 
 router.post('/update/:id',user.update_data);
-router.post('/check_otp',user.check_OTP);
 
 
 
