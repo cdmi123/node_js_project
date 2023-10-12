@@ -9,7 +9,7 @@ var debug = require('debug')('7.-crud-operation-using-mongodb-and-postman-api:se
 var http = require('http');
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://127.0.0.1:27017/8_to_10')
+mongoose.connect('mongodb+srv://sonanijaydip4:jaydip123@cluster0.zd7c9r7.mongodb.net/CRUD')
   .then(() => console.log('Connected!'));
 
 /**
