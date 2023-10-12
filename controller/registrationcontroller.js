@@ -4,8 +4,6 @@ const storage = require('node-persist');
 
 exports.register = async (req,res) => {
 
-    req.body.image = req.file.originalname
-
     var data = await usermodel.create(req.body);
 
     if(data) {
