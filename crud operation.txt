@@ -1,0 +1,32 @@
+crude operation using mongodb and postman
+
+structure:		routing -> controller -> model
+		url	function	      tbl_structure 	
+
+1. database	( mongodb )
+2. datapass	( postman )
+3. node js		( codeing )
+
+mysql			mogodb
+insert	post		create( argument )
+select	get		find( )
+delete	get		findbyidanddelete( arguement ( ID) )
+update	post		findbyidandupdate( argument ( ID , update_data ))
+
+	1. database connection
+	2. table structure ( model ) ( insert )
+	3. insert function ( create model )
+	4. create function ( insert select update delete ) ( controller )
+	5. routing ( url )
+
+1. create ( http://localhost:3000/insert ( name,email,password ))
+
+1. find ( http://localhost:3000/ )
+
+1. findbyidanddelete( http://localhost:3000/:id ( id ))
+
+1. findbyidandupdate( http://localhost:3000/update/:id ( id ))	update:
+						name,email,password 
+
+
+	
